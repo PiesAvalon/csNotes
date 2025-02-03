@@ -31,7 +31,37 @@
 
 VOC 2007、VOC 2012...
 ![VOC](../images/VOCdataset.png)
-### 数据集的下载
+#### 数据集的下载
 VOC 2007：http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
 VOC 2012：http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 pytorch官网：https://pytorch.org/vision/stable/generated/torchvision.datasets。VOCDetection.html
+#### 数据集介绍
+画目标检测边框（bounding box）软件：https://www.gifgit.com/image/rectangle-tool
+
+以VOC2007为例：
+- /Annotations：`.xml`文件。为训练集图片的信息，及相关目标的位置
+- /ImageSets/Main：不同类别在数据集每张图片中是否出现
+- /JPEGimages：原图
+
+### COCO数据集
+官网：https://cocodataset.org/
+
+下载链接：https://cocodataset.org/#download （其中train是训练集，val是验证集，数据集和数据集的标注是要分开下载的）
+
+COCO是一个很大的数据集，是和图片相关模型最常用的数据集。最常用的是COCO2017。
+
+关于coco数据集的标注（annotation）视频讲解：https://www.youtube.com/watch?v=h6s61a_pqfM
+
+### 在线数据集标注
+make sense标注工具官网：https://www.makesense.ai/
+
+cvat适合大型项目：https://www.cvat.ai/
+
+### 本地标注数据集（不推荐）
+精灵标注助手：http://www.jinglingbiaozhu.com/
+
+其他工具：
+
+labelme
+
+labelimg

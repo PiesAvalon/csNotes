@@ -83,9 +83,11 @@ conpiler determines the type of the variable being defined
 int i = 1;
 auto j = i;//j is int type
 ```
-- when you don't care the type
+- when you don't care the type(using iterators)
 - when its type is clear
 - lambdas
+
+ussually, the return type of a function shouldn't be auto.
 
 ## struct type
 used to return grouped infomation
@@ -98,4 +100,86 @@ struct Student{
 
 Student s = {"s", "CA", "21"}
 ```
-## pair type
+## pair/tuple type
+### pairs
+pairs allow you to put to differsnt type data together. they are in the <utility> library, and you can use auto type for a pair. 
+```cpp
+pair<int string> person = make_pair(20, "Jack") 
+```
+between functions, pairs are passed by value, which means that the function woundn't change the data in the pair.
+```cpp
+pair<int, string> grow(pair<int, string> person){
+    person.first++;
+    return person;
+}
+```
+it can also be passed be referance
+```cpp
+pair<int, string> grow(pair<int, string>& person);
+```
+usually, `cosnt` + referance is a faster way to pass a pair.
+```cpp
+pair<int, string> grow(const pair<int, string>& person);
+```
+we can use `auto` to create a pair when initalized
+```cpp
+auto person = make_pair(20， "Jack");
+```
+### tuples
+tupes are somewhat like pairs, but there can be more than two elements inside a tuple.
+tuples are in the header file `tuple`:
+```cpp
+#include<tuple>
+```
+#### initialization
+use make_tuple() to init a tuple
+```cpp
+std::tuple<int, string, sting> person = std::make_tuple(20, "Jack", "CA");
+```
+we can also use a auto type for a tuple
+```cpp
+auto person = std::make_tuple(20, "jack", "CA");
+```
+#### accessing elements
+use the `std::get`function and the index of the element to access an element in a tuple
+```cpp
+auto name = std::get<1>(person);
+std::cout << name << std::endl;
+```
+#### other features
+unpacking, size, swapping, comparing...
+### structured bindings
+structured bindings allow us to unpack tuple-like data. this is a feature in C++17 and later.
+```cpp
+tuple<int, char> foo(){
+    return 1, 'a';
+}
+
+auto [a, b] = foo();
+```
+### example
+```cpp
+pair<int,int> findPriceRange(int dist){
+    int min = static_cast<int>(dist *0.08 + 100);
+    int max = static_cast<int>(dist *0.36 + 750);//converting in cpp
+    return {min,max};//uniform initialization, used for pairs and tuples
+}
+int main(){
+    int dist = 6452;
+    auto [min,max] = findPriceRange(dist);
+    cout << "You can find prices between" << min << "and"<< max;
+}
+```
+## initialization(uniform initalization)
+put values in braces.
+```cpp
+vector<int> vec{3, 1, 2, 5};//this is called a initializer list
+Course now{"CS106L", {15, 30}, {16, 30}};
+```
+ we don't have to specify the types, they are automatcally deduced.
+
+ mind the difference of uniform initalization and null initialization
+ ```cpp
+vector<int> vec1{3};//vec1 = {3}
+vector<int> vec2(3);//vex2 = {0, 0, 0} 
+ ```

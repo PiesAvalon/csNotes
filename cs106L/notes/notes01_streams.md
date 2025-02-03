@@ -218,6 +218,12 @@ when cin is failed, it will fail for the rest of the programm.
 - Why does the cout operation not immediately print the outputonto the console? When is the output printed?
 - Does the position pointer skip whitespace before the token orafter the token with each >> operation?(this is important!)
 - Does the position pointer always read up to a whitespace? If not, come up with a counterexample.
+## when to use stringstreams
+when should i use a stringstream?
+- processing strings(simplify "/./a/b/.." to "\a")
+- formatting 1nput/output(uppercase, hex, other stream manipulators)
+- parsing different types(stingToInteger)
+if you are just concatenating strings, str.append() is faster than using a stringstream. 
 ## exercise
 ```cpp
 // Given a start time and a duration,

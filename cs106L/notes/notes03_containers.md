@@ -81,3 +81,13 @@ int main(){
 ```
 "vector is the type ofsequence that should be used by default... dequeis the data structure ofchoice when most insertions and deletions takeplace at the beginning or at the end ofthe sequence."
 --C++ lSO Standard (section 23.1.1.2):
+## container adaptors
+stack and queues are cotainer adaptors, they are inplemented by the vector or the deque, but adapts to a particular usage.
+### stack & queues
+```cpp
+template<
+    class T,
+    class Container = std::deque<T>//this means is possible to use a self defined class for a stack
+
+> class stack;
+```

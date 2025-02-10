@@ -107,3 +107,10 @@ auto my_remove_if(ForwardIt first, ForwardIt last, UniPred pred){
     return first + cnt;
 }
 ```
+### std::transform
+same as map in python, takes in a range, a destination and a function or lambda 
+```cpp
+std::transform(numbers.begin(), numbers.end(), numbers.begin(), [](int n) { return n * n; });
+```
+### std::search
+searches a container inside a container and returns the first found iterator

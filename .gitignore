@@ -3,4 +3,4 @@ object_detection/datasets/*
 
 pytorch/dataset/
 
-pytorch/c++/
+c++/

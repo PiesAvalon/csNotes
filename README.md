@@ -3,4 +3,4 @@
 
 [pytorch快速入门](pytorch/)
 
-[standard c++ programming](cs106l/)
+[standard c++ programming](cs106L/)

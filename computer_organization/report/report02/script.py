@@ -46,7 +46,7 @@ def save_markdown_to_file(markdown_table, output_file):
 
 def main():
     # 输入和输出文件路径
-    input_file = r".\zhenzhi4.txt"  # 替换为你的输入文件路径
+    input_file = r".\report01\真值表\zhenzhi5.txt"  # 替换为你的输入文件路径
     output_file = "output_table.md"  # 替换为你想要的输出文件路径
     
     try:

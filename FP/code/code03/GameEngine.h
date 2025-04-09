@@ -2,6 +2,8 @@
 #include <vector>
 #include <cstring>
 #include <assert.h>
+#include <algorithm> 
+#include <cctype>   
 
 using namespace std;
 

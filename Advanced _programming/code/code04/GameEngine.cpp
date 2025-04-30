@@ -73,7 +73,7 @@ bool GameEngine::processCommand(string& command){
     //注意非法原命令不变
     string tem = command;
     for(StrategyGenerator g : strategyGenerators){
-        activeProcessors.push_back(g(command));
+        addProcessor(g(command));
     }
     for(ProcessorFunc p : activeProcessors){
         if(!p(tem)){
@@ -129,22 +129,4 @@ bool removeCodes(string& s) {
         return true;
     }
     return true;
-}
-
-
-int main(){
-    GameEngine engine;
-    engine.addProcessor(removeCodes);
-    engine.addProcessor(formatStandardize);
-    
-    string cmd1 = "NJU#nju#Nju";
-    string cmd2 = "Never   GiVe uP";
-    string cmd3 = "Time#Flies";
-    bool result1 = engine.processCommand(cmd1);
-    bool result2 = engine.processCommand(cmd2);
-    bool result3 = engine.processCommand(cmd3);
-    
-    cout<<cmd1<<endl<<cmd2<<endl<<cmd3<<endl;
-    cout<<result1<<endl<<result2<<endl<<result3<<endl;
-    return 0;
 }

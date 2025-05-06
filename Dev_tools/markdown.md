@@ -230,11 +230,11 @@ https://www.bilibili.com/
 示例：
 ```markdown
 ![百度](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png "这是搜索引擎百度")
-![饼图](.\test.png "这是一张饼图")
+![饼图](./recourses/markdown/test.png "这是一张饼图")
 ```
 输出：
 ![百度](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png "这是搜索引擎百度")
-![饼图](.\test.png "这是一张饼图")
+![饼图](./recourses/markdown/test.png "这是一张饼图")
 
 ## 行内格式
 用一对`*`标记斜体字，

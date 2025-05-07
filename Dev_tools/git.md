@@ -186,3 +186,30 @@ git pull
 #处理冲突
 git push
 ```
+## rebase的使用     
+场景：在feature分支上开发，而main分支上有了新的提交
+```bash
+git checkout main #切换回main分支
+git pull #使本地main分支与远程main分支同步
+git chekcout feature 
+git rebase main #仅改变feature分支，将main分支的新提交rebase到feature上
+#完成feature的开发
+git checkout main
+git merge feature
+git push
+```
+如果在git rebase发生了冲突，则需要手动修复（可能存在多个冲突，需要依次修复）
+```bash
+git rebase main #发生了冲突
+# 处理冲突
+git add .
+git commit -m "message"
+git rebase --continue #继续rebase（可能需要处理多次）
+```
+
+## squash的使用
+场景：在将feature分支向main分支merge的时候，可以使用--squash将分支的所有更改合并为一次提交
+```bash
+git merge --squash feature
+git commit -m "squash merge" #使用squash的merge和一般的merge不一样，不会自动创建新的提交，需要手动提交
+```

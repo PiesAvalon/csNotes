@@ -213,3 +213,8 @@ git rebase --continue #继续rebase（可能需要处理多次）
 git merge --squash feature
 git commit -m "squash merge" #使用squash的merge和一般的merge不一样，不会自动创建新的提交，需要手动提交
 ```
+## 放弃当前所有更改回到上次commit
+```bash
+git reset --hard HEAD
+git clean -fd
+```

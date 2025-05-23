@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/tommy/Documents/csNotes/Advanced_programming/code/code08/template'
+relocations:     []
+...

